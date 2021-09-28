@@ -5,7 +5,11 @@ DECLARE
 	VSTRING VARCHAR2(10);
 	VDATE DATE;
 	VBOOL BOOLEAN := NULL;
---Can boolean dtatype accept null value? Yes
+	VNAME VARCHAR2(10) NOT NULL DEFAULT 'Hari'; --Assigning default value to NOT NULL variable
+	-- Declaring variable as NOT NULL
+	-- When declaring a variable by default it is set to Null.
+	-- Thus we need to initialize a NOT NULL variable before using it.
+--Can boolean datatype accept null value? Yes
 BEGIN
 	--VNUMBER:=100;
 	--letters:='abcde';
@@ -15,5 +19,9 @@ BEGIN
 	else
 		DBMS_OUTPUT.PUT_LINE('False');
 	END IF;
+	--Accessing NOT NULL variable
+	DBMS_OUTPUT.PUT_LINE(VNAME);
+	VNAME := 'Jyoti'; --Changing the variable
+	DBMS_OUTPUT.PUT_LINE(VNAME);
 END;
 /
